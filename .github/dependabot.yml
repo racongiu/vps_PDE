@@ -3,11 +3,19 @@
 # the pin stays immutable between them.
 version: 2
 updates:
+  # Sans target-branch, Dependabot vise la branche par DEFAUT : ses montees
+  # atterriraient sur main dans le dos de dev. Le fichier, lui, n'est lu que
+  # depuis la branche par defaut : cette ligne ne fait rien tant qu'elle n'a
+  # pas atteint main.
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: weekly
+    target-branch: dev
+  # Lit requirements.txt, a la racine. Avant qu'il existe, ce bloc ne trouvait
+  # aucun manifeste et ne proposait donc jamais rien, en silence.
   - package-ecosystem: pip
     directory: /
     schedule:
       interval: monthly
+    target-branch: dev
