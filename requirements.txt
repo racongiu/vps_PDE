@@ -7,5 +7,5 @@
 # PÉRISSABLE : ansible-core 2.21 exige Python >= 3.12, la version exacte que
 # ci.yml épingle. Monter ansible-core peut donc forcer à monter python-version.
 ansible-core==2.21.4
-ansible-lint==26.8.0
+ansible-lint==26.9.0
 yamllint==1.38.0
